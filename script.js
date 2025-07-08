@@ -1,12 +1,10 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
-const supabaseUrl = 'https://gvkanntuocgmdcuyhwkp.supabase.co'; // substitua pela sua URL
+const supabaseUrl = 'https://gvkanntuocgmdcuyhwkp.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd2a2FubnR1b2NnbWRjdXlod2twIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTEzMjIyMzcsImV4cCI6MjA2Njg5ODIzN30.csTHHao5dCabyB9kAs9D84UsT1PDgUGOV2MQ7hHPxT4'; // substitua pela sua chave
 const supabase = createClient(supabaseUrl, supabaseKey);
-
 const listaProdutos = document.getElementById("lista-produtos");
 const searchInput = document.getElementById("search");
-
 async function carregarProdutos() {
   const { data, error } = await supabase.from("produtos").select("*");
   if (error) {
@@ -15,7 +13,6 @@ async function carregarProdutos() {
   }
   exibirProdutos(data);
 }
-
 function exibirProdutos(lista) {
   listaProdutos.innerHTML = "";
   lista.forEach(prod => {
@@ -27,7 +24,6 @@ function exibirProdutos(lista) {
     listaProdutos.innerHTML += card;
   });
 }
-
 async function filtrarCategoria(categoria) {
   const { data, error } = await supabase
     .from("produtos")
@@ -40,7 +36,6 @@ async function filtrarCategoria(categoria) {
   }
   exibirProdutos(data);
 }
-
 searchInput.addEventListener("input", async () => {
   const termo = searchInput.value.toLowerCase();
   const { data, error } = await supabase.from("produtos").select("*");
@@ -53,15 +48,12 @@ searchInput.addEventListener("input", async () => {
   );
   exibirProdutos(filtrados);
 });
-
 function abrirCadastro() {
   document.getElementById('modalCadastro').style.display = 'flex';
 }
-
 function fecharCadastro() {
   document.getElementById('modalCadastro').style.display = 'none';
 }
-
 async function enviarCadastro() {
   const nome = document.getElementById('nomeLoja').value.trim();
   const endereco = document.getElementById('enderecoLoja').value.trim();
@@ -73,7 +65,7 @@ async function enviarCadastro() {
         nome: nome,
         endereco: endereco,
         categoria: categoria,
-        preco: "--"  // valor padrão para evitar erro NOT NULL
+        preco: "--"
       }
     ]);
     if (error) {
@@ -87,10 +79,8 @@ async function enviarCadastro() {
     alert("Por favor, preencha todos os campos.");
   }
 }
-
 window.abrirCadastro = abrirCadastro;
 window.fecharCadastro = fecharCadastro;
 window.enviarCadastro = enviarCadastro;
 window.filtrarCategoria = filtrarCategoria;
-
 carregarProdutos();

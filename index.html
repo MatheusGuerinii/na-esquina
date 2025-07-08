@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Página Inicial</title>
-  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -16,24 +15,22 @@
     <p>Encontre produtos e lojas da sua cidade rapidinho!</p>
     <input type="text" id="search" placeholder="O que você procura?" />
   </header>
-
   <section id="categorias">
     <h2>Categorias</h2>
     <div class="botoes-categorias">
       <button onclick="filtrarCategoria('Roupas')">Roupas</button>
       <button onclick="filtrarCategoria('Eletrônicos')">Eletrônicos</button>
-      <button onclick="filtrarCategoria('Construção')">Construção</button>
+      <button onclick="filtrarCategoria('Materiais de Construção')">Materiais de Construção</button>
       <button onclick="filtrarCategoria('Posto de Gasolina')">Posto de Gasolina</button>
       <button onclick="filtrarCategoria('Farmácia')">Farmácia</button>
       <button onclick="filtrarCategoria('Papelaria')">Papelaria</button>
+      <button onclick="filtrarCategoria('Comida')">Comida</button>
     </div>
   </section>
-
   <section id="produtos">
     <h2>Produtos em destaque</h2>
     <div id="lista-produtos" class="grid-produtos"></div>
   </section>
-
   <div id="modalCadastro" class="modal">
     <div class="modal-content">
       <h2>Cadastro de Loja</h2>
@@ -41,21 +38,18 @@
       <input id="enderecoLoja" placeholder="Endereço" />
       <label for="categoriaLoja">Categoria</label>
       <select id="categoriaLoja">
-        <option value="">Selecione a categoria</option>
-        <option value="Materiais de Construção">Materiais de Construção</option>
-        <option value="Comida">Comida</option>
         <option value="Roupas">Roupas</option>
+        <option value="Eletrônicos">Eletrônicos</option>
+        <option value="Materiais de Construção">Materiais de Construção</option>]
         <option value="Posto de Gasolina">Posto de Gasolina</option>
         <option value="Farmácia">Farmácia</option>
         <option value="Papelaria">Papelaria</option>
-        <option value="Eletrônicos">Eletrônicos</option>
+        <option value="Comida">Comida</option>
       </select>
       <button onclick="enviarCadastro()">Enviar</button>
       <button onclick="fecharCadastro()">Cancelar</button>
     </div>
   </div>
-
-  <!-- IMPORTANTE: type="module" é necessário para usar import no JS -->
   <script type="module" src="script.js"></script>
 </body>
 </html>
