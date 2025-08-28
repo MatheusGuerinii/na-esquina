@@ -5,14 +5,16 @@ body {
   color: #333;
 }
 header {
-  background-color: #fff;
-  text-align: center;
-  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 100px 30px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  position: relative;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
+
 header h1 {
   font-size: 3rem;
   color: #e05a00;
@@ -146,4 +148,143 @@ header p {
 }
 .modal-content button:last-of-type {
   background: #ccc;
+}
+
+
+
+
+
+asda
+
+/* Corpo */
+body {
+  margin: 0;
+  font-family: 'Urbanist', sans-serif;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  color: #333;
+}
+
+
+header h1 {
+  color: #e05a00;
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.btn {
+  background: #e05a00;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #c14a00;
+  transform: scale(1.05);
+}
+
+/* Banner */
+.banner {
+  height: 220px;
+  margin: 20px auto;
+  max-width: 1000px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.banner img {
+  width: 100%;
+  height: 330px; /* define altura fixa */
+  object-fit: cover; /* corta/encaixa a imagem sem distorcer */
+  border-radius: 20px;
+}
+
+
+/* Info da loja */
+.loja-info {
+  text-align: center;
+  padding: 20px;
+}
+
+.loja-info h2 {
+  color: #e05a00;
+  margin-bottom: 10px;
+}
+
+.loja-info p {
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* Produtos */
+#produtos {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+#produtos h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #e05a00;
+}
+
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 15px;
+}
+
+.card-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #e05a00;
+}
+
+.card-info p {
+  margin: 8px 0 0;
+  color: #555;
+  font-weight: bold;
+}
+
+.card-lojas {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-lojas:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
